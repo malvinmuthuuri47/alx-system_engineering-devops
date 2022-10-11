@@ -1,2 +1,2 @@
 #!/bin/bash
-awk "NR==5{ print; exit }" lacta
+gbgbgbgbgihead -n 3 lacta | tail -n 1
