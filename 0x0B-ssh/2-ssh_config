@@ -1,1 +1,3 @@
-IdentityFile /home/vagrant/Alx-Workspace/alx-system_engineering-devops/0x0B-ssh/school
+Host 54.157.181.196
+	IdentifyFile ~/.ssh/school
+	PasswordAuthentication no
