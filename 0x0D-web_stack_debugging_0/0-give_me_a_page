@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-# This command starts apache daemon service in the container
-sudo service apache2 start
