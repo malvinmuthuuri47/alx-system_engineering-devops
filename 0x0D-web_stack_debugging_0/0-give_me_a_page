@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# This command starts apache daemon service in the container
+sudo docker exec -it 594a0fcc3feb service apache2 start
