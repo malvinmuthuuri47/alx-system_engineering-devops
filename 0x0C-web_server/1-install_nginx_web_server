@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# This script installs nginx on the server.
+sudo apt-get install nginx -y
+
+# Configure nginx to listen on port 80
+# Display all application profiles
+sudo ufw app list
+sudo ufw allow 'Nginx HTTP'
+sudo ufw status
+
+# restart nginx without using the systemctl command-line utility
+sudo service nginx restart
+
