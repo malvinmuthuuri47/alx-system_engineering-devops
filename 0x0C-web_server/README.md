@@ -10,3 +10,6 @@
 <p>- This task requires writing a bash script that configures a server to install nginx, configure it to listen on port 80 and when queried with a GET request, it must return a page that contains the string "Hello World!".</p>
 
 <i><b>Task Three</b></i>
+
+Contributors:
+Malvin Muthuuri
