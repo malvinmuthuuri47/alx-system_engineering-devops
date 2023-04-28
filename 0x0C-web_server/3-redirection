@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# This bash script configures nginx with permanent redirection to another page.
+
+# Let's first install nginx
+sudo apt-get update
+sudo apt-gey install nginx -y
+
+# The commands that are responsible for the redirection are as follows:
+replacement_String="server_name _;\n\trewrite ^\/redirect_me https:\/www.youtube.com permanent;"
+sudo sed -i "s/server_name _;/$replacement_string/" /etc/nginx/sites-enabled/default
+
+# The final piece of the puzzle is to restart nginx
+sudo systemctl restart nginx
