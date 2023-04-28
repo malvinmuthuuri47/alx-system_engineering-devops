@@ -8,5 +8,4 @@ replacement_string="server_name _;\n\trewrite ^\/redirect_me https:\/\/www.youtu
 sudo sed -i "s/server_name _;/$replacement_string/" /etc/nginx/sites-enabled/default
 
 # This command tests Nginx configuration before reloading it.
-nginx -s reload
-
+sudo service nginx restart
