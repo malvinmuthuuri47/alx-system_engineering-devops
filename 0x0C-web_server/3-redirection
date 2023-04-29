@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 # This script configures the Nginx server to redirect to another page permanently.
 
+# Installing Nginx
+sudo apt-get update
+sudo apt-get install -y nginx
+
+# This command creates a Sample page
+echo "Hello World!" > /var/www/html/index.html
+
 # The replacement string to use
 replacement_string="server_name _;\n\trewrite ^\/redirect_me https:\/\/www.youtube.com permanent;"
 
