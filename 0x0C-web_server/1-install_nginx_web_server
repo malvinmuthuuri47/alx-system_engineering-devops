@@ -1,24 +1,18 @@
 #!/usr/bin/env bash
-# Commands to install Nginx
-sudo apt-get -y update
-sudo apt-get install -y nginx
+# This bash script installs Nginx on a server
+	# configures it to listen on port 80
+	# when queried with a get request,
+	# it should return "Hello World!"
 
-# Configuring the directory structure
-mkdir /etc/nginx/html
+sudo apt-get update
+sudo apt-get install nginx -y
 
-# Creating a Sample Page
-echo "Hello World!" > /etc/nginx/html/index.html
+# Configure it to listen on port 80
+ufw allow 'Nginx HTTP'
 
-# Configuring the server block file
-echo "server {
-	listen 80 default_server;
-	listen [::]:80 default_server;
-	
-	root /etc/nginx/html;
-	index index.html index.htm index.nginx-debian.html
+# Create a sample page that will return the string
+echo "Hello World!" > /var/www/html/index.html
 
-	server_name _;
-}" > /etc/nginx/sites-available/default
+# Start the nginx service
+service nginx start
 
-# Restarting Nginx
-sudo service nginx restart
