@@ -1,16 +1,28 @@
 #!/usr/bin/env bash
-# Install Nginx and configure it to have a custom 404 page that returns a string on error
+# This script configures the Nginx server to have a custom 404 page
 
+# Installing Nginx
 sudo apt-get update
-sudo apt-get install nginx -y
+sudo apt-get install -y nginx
 
-# Writing the error message into the 404.html error file
-echo "Ceci n'est pas une page" > /etc/nginx/html/404.html
+# Creating Sample Page
+echo "Hello World!" > /var/www/html/index.html
 
-# String to use when replacing the file content
-replacement_String="server_name _;\n\terror_page 404 \/404.html;\nlocation = 404.html {\n\t\troot \/etc\/nginx\/html;\n\t\tinternal;\n\t}"
+# The replacement string to use
+replacement_string="server_name _;\n\trewrite ^\/redirect_me https:\/\/www.youtube.com permanent;"
 
-sudo sed -i "s/server_name _;/$string_for_replacement/" /etc/nginx/sites-enabled/default
+# This is the command that configures the server to redirect to another page
+sudo sed -i "s/server_name _;/$replacement_string/" /etc/nginx/sites-enabled/default
 
-# Restart nginx service
+# Create the 404 error page
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+
+# The replacement string to use
+replacement_string="listen 80 default_server;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}"
+
+# Replace multiple lines using sed
+sudo sed -i "s/listen 80 default_server;/$replacement_string/" /etc/nginx/sites-enabled/default
+
+# This command tests Nginx configuration before reloading it.
 sudo service nginx restart
+
