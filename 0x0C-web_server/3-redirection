@@ -5,6 +5,9 @@
 sudo apt-get update
 sudo apt-get install -y nginx
 
+# Creating Sample Page
+echo "Hello World!" > /var/www/html/index.html
+
 # The replacement string to use
 replacement_string="server_name _;\n\trewrite ^\/redirect_me https:\/\/www.youtube.com permanent;"
 
@@ -13,3 +16,4 @@ sudo sed -i "s/server_name _;/$replacement_string/" /etc/nginx/sites-enabled/def
 
 # This command tests Nginx configuration before reloading it.
 sudo service nginx restart
+
