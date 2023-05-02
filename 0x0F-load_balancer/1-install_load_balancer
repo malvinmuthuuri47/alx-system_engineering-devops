@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # This script installs and configures HAproxy on the server
 # It also implements load balancing using roundrobin algorithm
 
