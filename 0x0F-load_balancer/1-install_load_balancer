@@ -1,8 +1,12 @@
 #!/usr/bin/bash
+# This script installs and configures HAproxy on the server
+# It also implements load balancing using roundrobin algorithm
+
 
 sudo apt-get update
 sudo apt-get install haproxy -y
 
+# This block configures the frontend and backend of the server
 echo "
 frontend lb-01
 	bind *:80
@@ -14,6 +18,8 @@ backend be-01
 	server 167989-web-02 54.160.90.163:80 check
 " >> /etc/haproxy/haproxy.cfg
 
+# This line of code enables HAproxy on the server
 sudo sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/haproxy
 
+# Restart the service
 sudo service haproxy restart
