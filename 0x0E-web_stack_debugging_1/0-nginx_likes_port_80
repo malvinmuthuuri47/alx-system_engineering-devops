@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# This script corrects the config error in the server block by changing the listening port from 8080 to port 80
+cp -r /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+
+# Restart the nginx service fot the new configuration to work.
+sudo service nginx restart
