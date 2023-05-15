@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# This script runs whoami as another user
+# This script runs whoami as another user supplied as an argument
 
 sudo -u "$1" whoami
