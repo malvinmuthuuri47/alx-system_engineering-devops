@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # configure ufw to block all incoming except specified ports
 
-sudo apt-get update -y
+sudo apt-get update 
 sudo apt-get install ufw -y
 sudo ufw default deny incoming
 sudo ufw allow 22/tcp
