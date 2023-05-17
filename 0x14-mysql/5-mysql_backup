@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Bash Script that creates a backup of your database
+
+# Get password that's supplied as a command-line argument
+MYSQL_PASSWD="$1"
+if [ $# -eq 0 ]
+then
+	echo "Usage [Script name] [argument one(Password)]"
+	exit 1
+fi
+
+# Filename format for the backup
+FILE_NAME="$(date +"%d-%m-%Y").tar.gz"
+
+# DUMP file for MySQL database and compress to tar.gz archive
+mysqldump --user=root --password="$MYSQL_PASSWD" --all-databases > backup.sql
+tar -czf "$FILE_NAME" "backup.sql"
