@@ -1,21 +1,16 @@
 #!/usr/bin/python3
-"""Gather data from an API"""
+"""Returns to-do list information for a given employee ID."""
 import requests
 import sys
 
-
 if __name__ == "__main__":
-    url = "https://jsonplaceholder.typicode.com"
-    user_id = int(sys.argv[1])
-    user_endPoint = "{}/users/{}".format(url, user_id)
-    user_name = requests.get(user_endPoint).json().get("name")
-
-    tasks_endPoint = "{}/todos".format(url)
-    tasks = requests.get(tasks_endPoint).json()
-    user_tasks = [d for d in tasks if d.get("userId") == user_id]
-    tasks_completed = [d for d in user_tasks if d.get("completed")]
+    url = "https://jsonplaceholder.typicode.com/"
+    name = requests.get("{}users/{}".format(url, sys.argv[1])).json()
+    tasks = requests.get("{}users/{}/todos".format(url, sys.argv[1])).json()
+    c_tasks = [task for task in tasks if task.get("completed") is True]
+    titles = [task.get("title") for task in tasks
+              if task.get("completed") is True]
     print("Employee {} is done with tasks({}/{}):"
-          .format(user_name, len(tasks_completed), len(user_tasks)))
-
-    for task in tasks_completed:
-        print("\t {}".format(task.get("title")))
+          .format(name.get("name"), len(c_tasks), len(tasks)))
+    for title in titles:
+        print("\t {}".format(title))
