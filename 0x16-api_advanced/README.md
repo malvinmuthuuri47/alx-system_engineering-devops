@@ -19,7 +19,7 @@ Copyright - Plagiarism
 - You are not allowed to publish any content of this project.
 - Any form of plagiarism is strictly forbidden and will result in removal from the program.
 
-Requirements:
+Requirements:<br />
 General:
 - Allowed editors: vi, vim, emacs
 - All your files will be interpreted/compiled on Ubuntu 14.04LTS using python3(version 3.4.3)
