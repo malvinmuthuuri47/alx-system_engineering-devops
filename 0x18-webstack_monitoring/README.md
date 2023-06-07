@@ -1,8 +1,8 @@
 <h1>0x18. Webstack monitoring</h1>
 
 Concepts:
-<a href='https://intranet.alxswe.com/concepts/13'>Monitoring</a>
-<a href='https://intranet.alxswe.com/concepts/67'>Server</a>
+- <a href='https://intranet.alxswe.com/concepts/13'>Monitoring</a>
+- <a href='https://intranet.alxswe.com/concepts/67'>Server</a><
 
 Learning Objectives
 - At the end of this project, you are expected to be able to <a href='https://intranet.alxswe.com/rltoken/Bd9r8twsVT3S_8j7-kOLrg'>explain to anyone</a> without the help of Google:
