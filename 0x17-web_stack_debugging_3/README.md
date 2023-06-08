@@ -17,7 +17,7 @@ General:
 - Your Puppet manifests first line must be a comment explaining what the Puppet manifest is about
 - Files will be checked with Puppet v3.4
 
-How to install <span style='color: red;'>puppet-lint</span> <br />
+How to install <span style="color: #FF0000;">puppet-lint</span> <br />
 $ apt-get install -y ruby <br />
 $ gem install puppet-lint -v 2.1.1 <br />
 
