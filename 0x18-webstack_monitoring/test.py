@@ -16,7 +16,7 @@ headers = {
 }
 
 # This specifies the host the request is being made for
-test_param = {'filter': 'host:167989-web-01'}
+test_param = {'filter': 'host:<your-server-name>'}
 
 # make call to the API
 response = requests.get(url, headers=headers, params=test_param)
