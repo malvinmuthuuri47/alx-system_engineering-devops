@@ -8,7 +8,8 @@ def recurse(subreddit, hot_list=[], after=None):
     This function implements recursion where you query an API for a
     given subreddit so long as the subreddit is valid, otherwise return None
     """
-    url = "https://www.reddit.com/r/{}/hot.json?after={}".format(subreddit, after)
+    url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
+
     headers = {"User-Agent": "Edg/113.0.1774.57"}
 
     data = requests.get(url, headers=headers, allow_redirects=False)
@@ -22,4 +23,3 @@ def recurse(subreddit, hot_list=[], after=None):
             recurse(subreddit, hot_list, after)
         return hot_list
     return None
-
