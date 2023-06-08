@@ -4,8 +4,8 @@ This script gets the dashbaord id from the Datadog API
 """
 import requests
 
-api_key = '06e85ca04adb06342a355dcb624442c7'
-app_key = '6b8c998ab06f5590c402777d937cb6fbd9a23ea1'
+api_key = 'my_api_key'
+app_key = 'my_application_key'
 
 url = 'https://api.datadoghq.com/api/v1/dashboard/'
 
